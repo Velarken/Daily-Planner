@@ -1,0 +1,65 @@
+div {
+    border:1px solid red;
+}
+
+#main-container {
+    display:flex;
+    min-height: 95vh;
+    min-width: 100vw;
+}
+
+/* LEFT CONTAINER */
+#left-container {
+    min-width:60%;
+}
+
+/* TIMER */
+#timer-container {
+    display:flex;
+    min-height: 30%;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#timer {
+    min-width: 40%;
+}
+
+#start-timer {
+    min-width: 10%;
+}
+
+#pause-timer {
+    min-width: 10%;
+}
+
+#stop-timer {
+    min-width: 10%;
+}
+
+#timer-counter {
+    min-width: 30%;
+}
+
+/* MOOD TRACKER */
+#mood-container {
+    flex-direction: column;
+    min-height: 50%
+}
+#mood-buttons {
+    min-height: 40%;
+}
+
+#mood-notes {
+    min-height:60%
+}
+
+/* SOMETHING TO LOOK FORWARD TO */
+#hope-container {
+    min-height: 20%;
+}
+
+/* RIGHT CONTAINER */
+#right-container {
+    min-width: 40%;
+}
