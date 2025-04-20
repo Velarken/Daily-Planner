@@ -1,65 +1,106 @@
+body {
+    background-color: rgb(0, 25, 31);
+}
+
 div {
-    border:1px solid red;
+    border:1px solid rgba(250, 174, 32, 0.651);
+    margin:10px;
+}
+
+li {
+    padding:10px;
+    font-size:18px;
 }
 
 #main-container {
+    border:none;
+    margin:none;
     display:flex;
-    min-height: 95vh;
+    min-height: 100vh;
     min-width: 100vw;
 }
 
 /* LEFT CONTAINER */
 #left-container {
-    min-width:60%;
+    flex-grow:3;
 }
 
 /* TIMER */
 #timer-container {
-    display:flex;
+    border:none;
+    display:block;
     min-height: 30%;
+}
+
+#timer-buttons {
+    border:none;
+    display:flex;
+    flex-grow:1;
+    min-height: 40%;
     flex-direction: row;
     align-items: stretch;
 }
 
 #timer {
-    min-width: 40%;
+    flex:1;
+    min-height: 40%;
 }
 
 #start-timer {
-    min-width: 10%;
+    flex:1;
 }
 
 #pause-timer {
-    min-width: 10%;
+    flex:1;
 }
 
 #stop-timer {
-    min-width: 10%;
+    justify-content: center;
+    align-items: center;
+    flex:1;
 }
 
 #timer-counter {
-    min-width: 30%;
+    flex:2;
 }
 
 /* MOOD TRACKER */
 #mood-container {
-    flex-direction: column;
-    min-height: 50%
+    display:block;
+    border: none;
+    flex-grow:2;
+    min-height: 40%;
 }
 #mood-buttons {
+    display:flex;
+    flex-direction: row;
     min-height: 40%;
+    justify-content: center;
+    align-items: stretch;
 }
 
 #mood-notes {
-    min-height:60%
+    min-height:60%;
 }
 
 /* SOMETHING TO LOOK FORWARD TO */
 #hope-container {
-    min-height: 20%;
+    flex-grow:1;
+    min-height: 25%;
 }
 
 /* RIGHT CONTAINER */
 #right-container {
-    min-width: 40%;
+    flex-grow:2;
+}
+
+#daily-buttons {
+    display:flex;
+    border: none;
+    flex-direction: row;
+    min-height: 20%;
+}
+
+#todo-list {
+    min-height:75%;
 }
