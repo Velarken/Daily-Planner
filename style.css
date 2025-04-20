@@ -76,7 +76,13 @@ li {
     flex-direction: row;
     min-height: 40%;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
+}
+
+#mood {
+    flex:1;
+    align-items: center;
+    justify-content: center;
 }
 
 #mood-notes {
@@ -99,6 +105,11 @@ li {
     border: none;
     flex-direction: row;
     min-height: 20%;
+    flex:1;
+}
+
+#daily {
+    flex:1;
 }
 
 #todo-list {
