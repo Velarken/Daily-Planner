@@ -5,6 +5,9 @@
 // Event Handlers
 
 // Functions
+
+  /* Add all logs to the firebase database, saved per user */
+
     // Countdown Timer Display
         // Start at 25:00 minutes
         // After hitting 0, change display to show "Time for a break! :)"
