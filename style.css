@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 div {
     border:1px solid rgba(250, 174, 32, 0.651);
     margin:10px;
@@ -38,6 +42,27 @@ li {
 #countdownTimer {
     flex:1;
     min-height:30px;
+    color:rgb(230, 232, 230);
+    font-size:40px;
+    align-items: center;
+    justify-content: center;
+}
+
+#timerCounter {
+    display:flex;
+    flex:1;
+    color:rgb(230, 232, 230);
+    font-size: 40px;
+    flex-direction: row;
+}
+
+#sessionCount {
+    flex:2;
+}
+
+#sessionDisplay {
+    flex:1;
+    align-items: baseline;
 }
 
 #timer-buttons {
