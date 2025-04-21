@@ -12,11 +12,11 @@ const startButton = document.querySelector("#startTimer");
 const pauseButton = document.querySelector("#pauseTimer");
 const stopButton = document.querySelector("#stopTimer");
 
-const moodHappy = document.querySelector(".happy");
-const moodIndifferent = document.querySelector(".indifferent");
-const moodSad = document.querySelector(".sad");
-const moodAngry = document.querySelector(".angry");
-const moodFearful = document.querySelector(".fear");
+const moodHappy = document.querySelector("#happy");
+const moodIndifferent = document.querySelector("#indifferent");
+const moodSad = document.querySelector("#sad");
+const moodAngry = document.querySelector("#angry");
+const moodFearful = document.querySelector("#fear");
 
 const dailyWalk = document.querySelector(".walk");
 const dailyYoga = document.querySelector(".yoga");
