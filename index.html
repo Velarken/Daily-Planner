@@ -6,20 +6,22 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="main-container">
-            <div id="left-container">
-                <div id="timer-container">
-                    <div id="timer"><p>Timer Here</p></div>
+        <div id="mainContainer">
+            <div id="leftContainer">
+                <div id="timerContainer">
+                    <div id="timer">
+                        <div id="countdownTimer"></div>
+                        <div id="timer-counter"></div>
+                    </div>
                     <div id="timer-buttons">
-                        <div id="start-timer"><button id="start-button">Start</button></div>
-                        <div id="pause-timer"><button id="pause-button">Pause</button></div>
-                        <div id="stop-timer"><button id="stop-button">Stop</button></div>
-                    <div id="timer-counter"></div>
+                        <div id="startTimer"><button id="startButton"><img id="timerControl" src="./images/play_button_noHover.png"></button></div>
+                        <div id="pause-timer"><button id="pauseButton"><img id="timerControl" src="./images/pause_button_noHover.png"></button></div>
+                        <div id="stop-timer"><button id="stopButton">Stop</button></div>
                     </div>
                 </div>
-                <div id="mood-container">
+                <div id="moodContainer">
                     <div id="mood-buttons">
-                        <div id="mood"><button>Happy</button></div>
+                        <div id="mood"><button><image id="mood" src="./images/happy_button_noSelect.png"></image></button></div>
                         <div id="mood"><button>Indifferent</button></div>
                         <div id="mood"><button>Sad</button></div>
                         <div id="mood"><button>Angry</button></div>
@@ -27,7 +29,7 @@
                     </div>
                     <div id="mood-notes"><p>Notes about my day...</p></div>
                 </div>
-                <div id="hope-container">
+                <div id="hopeContainer">
                     <div id="bullet-list">
                         <ul>
                             <li>This is a thing I have to look forward to</li>
@@ -37,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div id="right-container">
+            <div id="rightContainer">
                 <div id="daily-buttons">
                     <div id="daily"><button>Walking</button></div>
                     <div id="daily"><button>Yoga</button></div>
@@ -47,29 +49,6 @@
             </div>
         </div>
 
-        <script src="style.css"></script>
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyBDuVRtM7AQDSEqbf75VbHQY5PyIMzuoNE",
-              authDomain: "daily-planner-b5ac8.firebaseapp.com",
-              projectId: "daily-planner-b5ac8",
-              storageBucket: "daily-planner-b5ac8.firebasestorage.app",
-              messagingSenderId: "434718216187",
-              appId: "1:434718216187:web:bbf84f168960212fd6455e",
-              measurementId: "G-TP60E7WFDK"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-          </script>
+        <script src="script.js"></script>
     </body>
 </html>

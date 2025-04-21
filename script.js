@@ -1,10 +1,19 @@
 // Variables
 
-// Constructors
+// Selectors
+const startButton = document.querySelector("#startTimer");
+const pauseButton = document.querySelector("#pauseButton");
+const stopButton = document.querySelector("#stopButton");
 
 // Event Handlers
+startButton.addEventListener('click', () => log('Start Timer Button'));
+pauseButton.addEventListener('click', () => log('Pause Timer Button'));
+stopButton.addEventListener('click', () => log('Stop Timer Button'));
 
 // Functions
+function log(clicked) {
+    console.log(`Clicked ${clicked}`);
+}
 
   /* Add all logs to the firebase database, saved per user */
 
