@@ -1,10 +1,25 @@
 * {
+    display:flex;
     font-family: sans-serif;
+    color:white;
+}
+
+body {
+    background-color: rgb(0, 25, 31);
 }
 
 div {
-    border:1px solid rgba(250, 174, 32, 0.651);
-    margin:10px;
+    border:2px solid rgba(250, 174, 32, 0.651);
+    border-radius: 8px;
+    margin:2px;
+}
+
+button {
+    background-color: rgb(0, 25, 31);
+    color:rgba(250, 174, 32, 0.651);
+    font-size: 50px;
+    border:2px solid rgb(250,174,32);
+    border-radius: 12px;
 }
 
 li {
@@ -14,27 +29,26 @@ li {
 
 #mainContainer {
     background-color: rgb(0, 25, 31);
-    border:none;
-    margin:none;
-    display:flex;
+    border-radius: 8px;
+    border:5px outset rgba(250, 174, 32, 0.651);
+    margin-left:10px;
     min-height: 100vh;
     min-width: 100vw;
 }
 
 /* LEFT CONTAINER */
 #leftContainer {
-    flex-grow:3;
+    flex-direction: column;
+    flex:1;
 }
 
 /* TIMER */
 #timerContainer {
     border:none;
     display:block;
-    min-height: 30%;
 }
 
 #timer {
-    display:flex;
     flex-direction: row;
     flex:1;
 }
@@ -49,39 +63,46 @@ li {
 }
 
 #timerCounter {
-    display:flex;
     flex:1;
     color:rgb(230, 232, 230);
     font-size: 40px;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #sessionCount {
     flex:2;
+    border:none;
 }
 
 #sessionDisplay {
     flex:1;
     align-items: baseline;
+    border:none;
 }
 
 #timer-buttons {
     border:none;
-    display:flex;
     flex-grow:1;
-    min-height: 40%;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
+}
+
+.timerButton {
+    flex:1;
+    justify-content: center;
+    align-items: center;
 }
 
 #timerControl {
-    max-height:60px;
     flex:1;
 }
 
 #timer {
     flex:1;
-    min-height: 40%;
+    border:none;
 }
 
 #start-timer {
@@ -104,53 +125,81 @@ li {
 
 /* MOOD TRACKER */
 #moodContainer {
-    display:block;
     border: none;
     flex-grow:2;
-    min-height: 40%;
+    flex-direction: column;
 }
 #mood-buttons {
-    display:flex;
     flex-direction: row;
     min-height: 40%;
     justify-content: center;
     align-items: center;
+    border:none;
 }
 
 #mood {
     flex:1;
     align-items: center;
     justify-content: center;
-    max-height:60px;
+    background-color: rgb(0, 25, 31);
+    font-size:50px;
+}
+
+button:hover {
+    color: rgb(167, 120, 33);
+    background-color: rgb(0, 15, 19);
 }
 
 #mood-notes {
-    min-height:60%;
+
 }
 
 /* SOMETHING TO LOOK FORWARD TO */
 #hopeContainer {
     flex-grow:1;
-    min-height: 25%;
 }
 
 /* RIGHT CONTAINER */
 #rightContainer {
-    flex-grow:2;
+    flex-direction:column;
+    flex:1;
+    margin:none;
 }
 
 #daily-buttons {
-    display:flex;
     border: none;
     flex-direction: row;
-    min-height: 20%;
     flex:1;
 }
 
 #daily {
     flex:1;
+    padding:10px;
+}
+
+#sideDisplay {
+    flex:1;
+    flex-direction: row;
+}
+
+button.plus, button.minus {
+    font-size:30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#walkIncDisplay, 
+
+#card {
+    flex:1;
+    flex-direction: column;
+}
+
+#increments {
+    flex:1;
+    flex-direction: row;
 }
 
 #todo-list {
-    min-height:75%;
+    flex:3;
 }

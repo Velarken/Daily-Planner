@@ -9,6 +9,7 @@
         <div id="mainContainer">
             <div id="leftContainer">
                 <div id="timerContainer">
+                    <h2>Pomadora Timer</h2>
                     <div id="timer">
                         <div id="countdownTimer"></div>
                         <div id="timerCounter">
@@ -17,18 +18,18 @@
                         </div>
                     </div>
                     <div id="timer-buttons">
-                        <div id="startTimer"><button id="startButton"><img id="timerControl" src="./images/play_button_noHover.png"></button></div>
-                        <div id="pause-timer"><button id="pauseButton"><img id="timerControl" src="./images/pause_button_noHover.png"></button></div>
-                        <div id="stop-timer"><button id="stopButton">Stop</button></div>
+                        <button class="timerButton" id="startTimer">&#9654</button>
+                        <button class="timerButton" id="pauseTimer">&#9646&#9646</button>
+                        <button class="timerButton" id="stopTimer">&#9632</button>
                     </div>
                 </div>
                 <div id="moodContainer">
                     <div id="mood-buttons">
-                        <div id="mood" class="happy"><button><image id="mood" src="./images/happy_button_noSelect.png"></image></button></div>
-                        <div id="mood" class="indifferent"><button>Indifferent</button></div>
-                        <div id="mood" class="sad"><button>Sad</button></div>
-                        <div id="mood" class="angry"><button>Angry</button></div>
-                        <div id="mood" class="fear"><button>Fearful</button></div>
+                        <button class="mood">&#128512</button>
+                        <button class="mood">&#128529</button>
+                        <button class="mood">&#128543</button>
+                        <button class="mood">&#128544</button>
+                        <button class="mood">&#128552</button>
                     </div>
                     <div id="mood-notes"><p>Notes about my day...</p></div>
                 </div>
@@ -44,9 +45,40 @@
             </div>
             <div id="rightContainer">
                 <div id="daily-buttons">
-                    <div id="daily" class="walk"><button>Walking</button></div>
-                    <div id="daily" class="yoga"><button>Yoga</button></div>
-                    <div id="daily" class="chores"><button>Chores</button></div>
+                    <div id="card">
+                        <div>Walk Photo</div> <!-- replace with image-->
+                        <div id="increments">
+                            <button id="walkInc" class="plus">&#x25B2</button>
+                            <button id="walkDec" class="minus">&#x25BC</button>
+                        </div>
+                        <div id="sideDisplay">
+                            <div>Walk Count</div>
+                            <div id="walkIncDisplay">0</div>
+                        </div>
+                    </div>
+
+                    <div id="card">
+                        <div>Yoga Photo</div> <!-- replace with image-->
+                        <div id="increments">
+                            <button id="yogaInc" class="plus">&#x25B2</button>
+                            <button id="yogaDec" class="minus">&#x25BC</button>
+                        </div>
+                        <div id="sideDisplay">
+                            <div>Yoga Count</div>
+                            <div id="yogaIncDisplay">0</div>
+                        </div>
+                    </div>
+                    <div id="card">
+                        <div>Chore Photo</div> <!-- replace with image-->
+                        <div id="increments">
+                            <button id="choreInc" class="plus">&#x25B2</button>
+                            <button id="choreDec" class="minus">&#x25BC</button>
+                        </div>
+                        <div id="sideDisplay">
+                            <div>Chore Count</div>
+                            <div id="choreIncDisplay">0</div>
+                        </div>
+                    </div>
                 </div>
                 <div id="todo-list"></div>
             </div>
