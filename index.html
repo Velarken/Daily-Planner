@@ -11,7 +11,10 @@
                 <div id="timerContainer">
                     <div id="timer">
                         <div id="countdownTimer"></div>
-                        <div id="timer-counter"></div>
+                        <div id="timerCounter">
+                            <div id="sessionCount">Session Count:</div>
+                            <div id="sessionDisplay">0</div>
+                        </div>
                     </div>
                     <div id="timer-buttons">
                         <div id="startTimer"><button id="startButton"><img id="timerControl" src="./images/play_button_noHover.png"></button></div>
@@ -21,11 +24,11 @@
                 </div>
                 <div id="moodContainer">
                     <div id="mood-buttons">
-                        <div id="mood"><button><image id="mood" src="./images/happy_button_noSelect.png"></image></button></div>
-                        <div id="mood"><button>Indifferent</button></div>
-                        <div id="mood"><button>Sad</button></div>
-                        <div id="mood"><button>Angry</button></div>
-                        <div id="mood"><button>Fearful</button></div>
+                        <div id="mood" class="happy"><button><image id="mood" src="./images/happy_button_noSelect.png"></image></button></div>
+                        <div id="mood" class="indifferent"><button>Indifferent</button></div>
+                        <div id="mood" class="sad"><button>Sad</button></div>
+                        <div id="mood" class="angry"><button>Angry</button></div>
+                        <div id="mood" class="fear"><button>Fearful</button></div>
                     </div>
                     <div id="mood-notes"><p>Notes about my day...</p></div>
                 </div>
@@ -41,9 +44,9 @@
             </div>
             <div id="rightContainer">
                 <div id="daily-buttons">
-                    <div id="daily"><button>Walking</button></div>
-                    <div id="daily"><button>Yoga</button></div>
-                    <div id="daily"><button>Chores</button></div>
+                    <div id="daily" class="walk"><button>Walking</button></div>
+                    <div id="daily" class="yoga"><button>Yoga</button></div>
+                    <div id="daily" class="chores"><button>Chores</button></div>
                 </div>
                 <div id="todo-list"></div>
             </div>
