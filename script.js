@@ -1,13 +1,16 @@
 // Variables
 let timerCounter = 0;
 let timeRemaining = 1500;
+let walkCount = 0;
+let yogaCount = 0;
+let choreCount= 0;
 
 // Selectors
 const timerDisplay = document.querySelector("#countdownTimer");
 const timerCountDisplay = document.querySelector("#sessionDisplay");
 const startButton = document.querySelector("#startTimer");
-const pauseButton = document.querySelector("#pauseButton");
-const stopButton = document.querySelector("#stopButton");
+const pauseButton = document.querySelector("#pauseTimer");
+const stopButton = document.querySelector("#stopTimer");
 
 const moodHappy = document.querySelector(".happy");
 const moodIndifferent = document.querySelector(".indifferent");
@@ -18,6 +21,10 @@ const moodFearful = document.querySelector(".fear");
 const dailyWalk = document.querySelector(".walk");
 const dailyYoga = document.querySelector(".yoga");
 const dailyChores = document.querySelector(".chores");
+
+const choreIncDisplay = document.querySelector('#choreIncDisplay');
+const choreIncrementButton = document.querySelector("#choreInc");
+const choreDecrementButton = document.querySelector('#choreDec');
 
 // Event Handlers
 startButton.addEventListener('click', () => startTimer(timeRemaining)); // Set to 1500 when done testing
@@ -30,6 +37,8 @@ moodSad.addEventListener('click', () => log('Sad Face Button'));
 moodAngry.addEventListener('click', () => log('Angry Face Button'));
 moodFearful.addEventListener('click', () => log('Fear Face Button '));
 
+choreIncrementButton.addEventListener('click', () => increment('+', choreIncDisplay))
+choreDecrementButton.addEventListener('click', () => increment('-', choreIncDisplay))
 // Functions
 function log(clicked) {
     console.log(`Clicked ${clicked}`);
@@ -53,6 +62,16 @@ function startTimer(duration) {
         }
     }, 1000)
 };
+
+function increment(sign, category) {
+    if (sign == '+') {
+        choreCount++;
+        category.textContent = choreCount;
+    } else if (sign == '-') {
+        choreCount--;
+        category.textContent = choreCount;
+    }
+}
 
 // TO DO LIST
   /* Add all logs to the firebase database, saved per user */
@@ -82,12 +101,9 @@ function startTimer(duration) {
     // Stop Timer
         // Reset timer to 25:00 minutes
 
-    // Session Counter
-        // When timer reaches 0:00, add 1 to counter
-        // Log Session Counter
-
     // Chosen Mood Button
-        // Change Button Color 
+        // Change Button Color when selected
+        // Make larger when hovered
         // Log Chosen Mood
 
     // Mood Notes
@@ -97,11 +113,6 @@ function startTimer(duration) {
         // Move + block under input text and accept another input
         // Ability to scroll if user inputs exceed view space
         // Log all input texts
-    
-    // Daily Habits Buttons
-        // If + is hit, add 1 to counter
-        // If - is hit, subtract 1 from counter
-        // Log counter totals
 
     // To-do List
         // Display + in an empty block
