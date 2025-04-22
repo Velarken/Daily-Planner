@@ -1,6 +1,6 @@
 // Variables
 let timerCounter = 0;
-let timeRemaining = 1500;
+let timeRemaining = 15; // set to 1500 (25 minutes) by default
 let walkCount = 0;
 let yogaCount = 0;
 let choreCount= 0;
@@ -26,27 +26,42 @@ const choreIncDisplay = document.querySelector('#choreIncDisplay');
 const choreIncrementButton = document.querySelector("#choreInc");
 const choreDecrementButton = document.querySelector('#choreDec');
 
+const yogaIncDisplay = document.querySelector('#yogaIncDisplay');
+const yogaIncrementButton = document.querySelector("#yogaInc");
+const yogaDecrementButton = document.querySelector('#yogaDec');
+
+const walkIncDisplay = document.querySelector('#walkIncDisplay');
+const walkIncrementButton = document.querySelector("#walkInc");
+const walkDecrementButton = document.querySelector('#walkDec');
+
 // Event Handlers
-startButton.addEventListener('click', () => startTimer(timeRemaining)); // Set to 1500 when done testing
-pauseButton.addEventListener('click', () => log('Pause Timer Button'));
-stopButton.addEventListener('click', () => log('Stop Timer Button'));
+startButton.addEventListener('click', () => startTimer(timeRemaining));
+pauseButton.addEventListener('click', () => pauseTimer());
+stopButton.addEventListener('click', () => stopTimer());
 
-moodHappy.addEventListener('click', () => log('Happy Face Button'));
-moodIndifferent.addEventListener('click', () => log('Indifferent Face Button'));
-moodSad.addEventListener('click', () => log('Sad Face Button'));
-moodAngry.addEventListener('click', () => log('Angry Face Button'));
-moodFearful.addEventListener('click', () => log('Fear Face Button '));
+moodHappy.addEventListener('click', () => changeBackground(moodHappy));
+moodIndifferent.addEventListener('click', () => changeBackground(moodIndifferent));
+moodSad.addEventListener('click', () => changeBackground(moodSad));
+moodAngry.addEventListener('click', () => changeBackground(moodAngry));
+moodFearful.addEventListener('click', () => changeBackground(moodFearful));
 
-choreIncrementButton.addEventListener('click', () => increment('+', choreIncDisplay))
-choreDecrementButton.addEventListener('click', () => increment('-', choreIncDisplay))
+choreIncrementButton.addEventListener('click', () => increment('+', choreIncDisplay));
+choreDecrementButton.addEventListener('click', () => increment('-', choreIncDisplay));
+
+walkIncrementButton.addEventListener('click', () => increment('+', walkIncDisplay));
+walkDecrementButton.addEventListener('click', () => increment('-', walkIncDisplay));
+
+yogaIncrementButton.addEventListener('click', () => increment('+', yogaIncDisplay));
+yogaDecrementButton.addEventListener('click', () => increment('-', yogaIncDisplay));
 // Functions
 function log(clicked) {
     console.log(`Clicked ${clicked}`);
 };
 
+let intervalID = null;
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
-    setInterval(function () {
+    intervalID = setInterval(function () {
         minutes = parseInt(timer /60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -55,21 +70,58 @@ function startTimer(duration) {
         timerDisplay.textContent =  minutes + ":" + seconds;
         if (--timer < 0) {
             timer = duration;
+            timeRemaining--
         } else if (timer == 0) {
             timerDisplay.textContent = "Time for a break!"
             timerCounter++;
             timerCountDisplay.textContent = timerCounter;
+            timeRemaining=1500;
+            clearInterval(intervalID);
         }
+        
     }, 1000)
 };
 
+function pauseTimer() {
+    console.log(timeRemaining);
+}
+
+function stopTimer() {
+    clearInterval(intervalID);
+    timerDisplay.textContent = "25:00";
+}
+
 function increment(sign, category) {
     if (sign == '+') {
-        choreCount++;
-        category.textContent = choreCount;
+        if (category == choreIncDisplay) {
+            choreCount++;
+            category.textContent = choreCount;
+        }else if (category == walkIncDisplay) {
+            walkCount++;
+            category.textContent = walkCount;
+        }else if (category == yogaIncDisplay) {
+            yogaCount++;
+            category.textContent = yogaCount;
+        }
     } else if (sign == '-') {
-        choreCount--;
-        category.textContent = choreCount;
+        if (category == choreIncDisplay) {
+            choreCount--;
+            category.textContent = choreCount;
+        }else if (category == walkIncDisplay) {
+            walkCount--;
+            category.textContent = walkCount;
+        }else if (category == yogaIncDisplay) {
+            yogaCount--;
+            category.textContent = yogaCount;
+        }
+    }
+}
+
+function changeBackground(button) {
+    if (button.style.backgroundColor != "rgb(179, 182, 182)") {
+        button.style.backgroundColor = "rgb(179, 182, 182)";
+    }else {
+        button.style.backgroundColor= "rgb(0,15,19)";
     }
 }
 
@@ -84,7 +136,6 @@ function increment(sign, category) {
             // if function == pause, stop timer and update display to show time remaining
             // store timer duration in timeRemaining variable
 
-
     // Countdown Timer Display
         // After 5 minute break, reset display to 25:00 minutes
 
@@ -97,9 +148,6 @@ function increment(sign, category) {
                 // Store in a variable
                 // Display value of the variable
                 // Start a new countdown with the time remaining
-
-    // Stop Timer
-        // Reset timer to 25:00 minutes
 
     // Chosen Mood Button
         // Change Button Color when selected
@@ -120,3 +168,6 @@ function increment(sign, category) {
             // Display user input
             // Move + block below user input
             // Allow scroll if inputs exceed view area
+
+    // Consider creating a popup for when it's break time instead of overriding
+    // the timer container. Can use the glowy effect with box-shadow 

@@ -4,8 +4,13 @@
     color:white;
 }
 
+head{
+    display:none;
+}
+
 body {
     background-color: rgb(0, 15, 19);
+    display:block;
 }
 
 div {
@@ -33,18 +38,26 @@ ul {
     width:100%;
 }
 
+#navBar {
+    display:block;
+}
+
 #mainContainer {
     border-radius: 8px;
     border:5px outset rgba(250, 174, 32, 0.651);
     margin-left:10px;
     min-height: 98vh;
     min-width: 93vw;
+    padding:10px;
+    flex:auto;
 }
 
 /* LEFT CONTAINER */
 #leftContainer {
     flex-direction: column;
     flex:1;
+    border:none;
+    margin-right:5px;
 }
 
 /* TIMER */
@@ -101,6 +114,8 @@ ul {
     flex:1;
     justify-content: center;
     align-items: center;
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
+    margin:10px;
 }
 
 #timerControl {
@@ -114,16 +129,19 @@ ul {
 
 #start-timer {
     flex:1;
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
 }
 
 #pause-timer {
     flex:1;
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
 }
 
 #stop-timer {
     justify-content: center;
     align-items: center;
     flex:1;
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
 }
 
 #timer-counter {
@@ -135,25 +153,32 @@ ul {
     border: none;
     flex-grow:2;
     flex-direction: column;
+    background-color: rgb(0, 15, 19);
 }
 #mood-buttons {
     flex-direction: row;
     min-height: 40%;
+    background-color: rgb(0, 15, 19);
     justify-content: center;
     align-items: center;
     border:none;
 }
 
-#mood {
+.mood {
     flex:1;
     align-items: center;
     justify-content: center;;
     font-size:50px;
+    margin:10px;
+    border:2px outset rgb(250,174,32);
+    text-shadow:4px 6px 5px rgba(102, 70, 10, 0.479);
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
 }
 
 button:hover {
     color: rgb(167, 120, 33);
     background-color: rgb(0, 25, 31);
+    transform:scale(1.15);
 }
 
 /* SOMETHING TO LOOK FORWARD TO */
@@ -165,13 +190,18 @@ button:hover {
 #rightContainer {
     flex-direction:column;
     flex:1;
-    margin:none;
+    margin-left:5px;
+    border:none;
 }
 
 #daily-buttons {
     border: none;
     flex-direction: row;
     flex:1;
+}
+
+#choreIncDisplay, #yogaIncDisplay, #walkIncDisplay {
+    font-size:24px;
 }
 
 #daily {
@@ -190,10 +220,16 @@ button.plus, button.minus {
     align-items: center;
     justify-content: space-around;
     flex:1;
+    margin:10px;
+    box-shadow: -6px 6px 0px rgb(0, 25, 31);
 }
 
 #photo {
     flex:2;
+    font-size:100px;
+    color: rgb(250,174,32);
+    align-items: center;
+    justify-content: center;
 }
 
 .habitCounter {
@@ -210,8 +246,19 @@ button.plus, button.minus {
     flex:1;
     flex-direction: row;
     border:none;
+    margin:10px;
 }
 
 #todo-list {
     flex:3;
+}
+
+#bullet-list {
+    border:none;
+}
+
+.popup {
+    box-shadow: /* REMOVE THE GLOW EFFECT HERE*/
+        rgb(102, 70, 10) 0 0 40px 23px,
+        inset rgb(102, 70, 10) 0 0 40px 23px;
 }
